@@ -1,0 +1,28 @@
+{% extends "body.html" %}
+
+{% load static %}
+
+{% block head %}
+{% endblock head %}
+
+
+
+{% block title %}
+
+Home
+
+{% endblock title %}
+
+
+
+{% block body %}
+
+
+<h1 class="heading1">Rock Paper Scissor Game</h1>
+
+<div class="d-grid gap-2 col-4 mx-auto" style="padding-top: 250px; font-family: fantasy;">
+    <a class="btn btn-primary btn-lg" href="{% url 'playgame' %}">Let's Play</a>
+</div>
+
+{% endblock body %}
+

@@ -1,0 +1,60 @@
+{% extends "body.html" %}
+
+
+{% block head %}
+{% endblock head %}
+
+
+
+{% block title %}
+
+Play Game
+
+{% endblock title %}
+
+
+
+
+{% block body %}
+
+
+
+<h1 class="heading1">Rock Paper Scissor Game</h1>
+<div class="home">
+    <a class="btn btn-light btn-lg" href="{% url 'playgame' %}"style="margin-right: 20px;">Play again</a>
+    <a class="btn btn-light btn-lg" href="{% url 'home' %}" style="margin-left: 20px; ">Home</a>
+</div>
+
+<div class="bt1">
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" name="user_choice" value="Stone" class="glow-on-hover">Stone</button>
+        <button type="submit" name="user_choice" value="Paper" class="glow-on-hover" style="margin-left: 70px; margin-right: 70px;">Paper</button>
+        <button type="submit" name="user_choice" value="Scissor" class="glow-on-hover">Scissor</button>
+    </form>
+</div>
+
+
+<div class="container">
+    <div class="user">
+        <h2>User</h2>
+        <div class="choice" id="user_choice">{{ user_choice }}</div>
+    </div>
+    <div class="result">
+        <h2>Result</h2>
+        <div class="choice" id="result-text">{{ result }}</div>
+    </div>
+    <div class="computer">
+        <h2>Computer</h2>
+        <div class="choice" id="computer_choice">{{ computer_choice }}</div>
+    </div>
+</div>
+
+<div class="st">
+    <h2 style="font-family: fantasy; font-size: 45px;">Game Statistics</h2>
+    <p style="font-family: fantasy; font-size: 30px; padding-top: 10px;">User Wins: {{ user_wins }} &emsp;&emsp;Computer Wins: {{ computer_wins }} &emsp;&emsp;Draws: {{ draws }}</p>
+    <p></p>
+    <p></p>
+</div>
+
+{% endblock body %}
